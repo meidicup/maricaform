@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>マリカ 開発者用ページ</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin-right: 10px; }
+    #groupStatus { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>マリオカート 開発者用ページ</h1>
+
+  <div id="groupStatus">
+    <h2>現在の進行状況</h2>
+    <p id="groupAStatus">Aグループ: <strong>予想受付中</strong></p>
+    <p id="groupBStatus">Bグループ: <strong>予想受付中</strong></p>
+    <p id="groupCStatus">Cグループ: <strong>予想受付中</strong></p>
+  </div>
+
+  <h3>進行状況を更新</h3>
+  <button id="endGroupA">Aグループ 終了</button>
+  <button id="endGroupB">Bグループ 終了</button>
+  <button id="endGroupC">Cグループ 終了</button>
+
+  <h3>次のグループを開始</h3>
+  <button id="startGroupA">Aグループ 開始</button>
+  <button id="startGroupB">Bグループ 開始</button>
+  <button id="startGroupC">Cグループ 開始</button>
+
+  <script>
+    // 開発者ページの進行状況管理
+    let groupStatus = {
+      groupA: "受付中", // 初期状態
+      groupB: "受付中",
+      groupC: "受付中"
+    };
+
+    // グループ終了
+    function endGroup(group) {
+      groupStatus[group] = "終了";
+      document.getElementById(`${group}Status`).innerHTML = `${group.toUpperCase()}グループ: <strong>予想終了</strong>`;
+      alert(`${group.toUpperCase()}グループの予想受付を終了しました。`);
+    }
+
+    // グループ開始
+    function startGroup(group) {
+      groupStatus[group] = "受付中";
+      document.getElementById(`${group}Status`).innerHTML = `${group.toUpperCase()}グループ: <strong>予想受付中</strong>`;
+      alert(`${group.toUpperCase()}グループの予想受付を開始しました。`);
+    }
+
+    // イベントリスナー（終了ボタン）
+    document.getElementById("endGroupA").addEventListener("click", () => endGroup("groupA"));
+    document.getElementById("endGroupB").addEventListener("click", () => endGroup("groupB"));
+    document.getElementById("endGroupC").addEventListener("click", () => endGroup("groupC"));
+
+    // イベントリスナー（開始ボタン）
+    document.getElementById("startGroupA").addEventListener("click", () => startGroup("groupA"));
+    document.getElementById("startGroupB").addEventListener("click", () => startGroup("groupB"));
+    document.getElementById("startGroupC").addEventListener("click", () => startGroup("groupC"));
+  </script>
+
+</body>
+</html>

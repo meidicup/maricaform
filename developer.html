@@ -30,6 +30,52 @@
   <button id="startGroupB">Bグループ 開始</button>
   <button id="startGroupC">Cグループ 開始</button>
 
+  <h3>勝者を入力（1位～4位）</h3>
+
+  <h4>Aグループ</h4>
+  <label for="winnerA1">1位:</label>
+  <input type="text" id="winnerA1" placeholder="Aグループ 1位">
+  <br><br>
+  <label for="winnerA2">2位:</label>
+  <input type="text" id="winnerA2" placeholder="Aグループ 2位">
+  <br><br>
+  <label for="winnerA3">3位:</label>
+  <input type="text" id="winnerA3" placeholder="Aグループ 3位">
+  <br><br>
+  <label for="winnerA4">4位:</label>
+  <input type="text" id="winnerA4" placeholder="Aグループ 4位">
+  <br><br>
+
+  <h4>Bグループ</h4>
+  <label for="winnerB1">1位:</label>
+  <input type="text" id="winnerB1" placeholder="Bグループ 1位">
+  <br><br>
+  <label for="winnerB2">2位:</label>
+  <input type="text" id="winnerB2" placeholder="Bグループ 2位">
+  <br><br>
+  <label for="winnerB3">3位:</label>
+  <input type="text" id="winnerB3" placeholder="Bグループ 3位">
+  <br><br>
+  <label for="winnerB4">4位:</label>
+  <input type="text" id="winnerB4" placeholder="Bグループ 4位">
+  <br><br>
+
+  <h4>Cグループ</h4>
+  <label for="winnerC1">1位:</label>
+  <input type="text" id="winnerC1" placeholder="Cグループ 1位">
+  <br><br>
+  <label for="winnerC2">2位:</label>
+  <input type="text" id="winnerC2" placeholder="Cグループ 2位">
+  <br><br>
+  <label for="winnerC3">3位:</label>
+  <input type="text" id="winnerC3" placeholder="Cグループ 3位">
+  <br><br>
+  <label for="winnerC4">4位:</label>
+  <input type="text" id="winnerC4" placeholder="Cグループ 4位">
+  <br><br>
+
+  <button id="saveWinners">勝者を保存</button>
+
   <script>
     // 開発者ページの進行状況管理
     let groupStatus = {
@@ -52,6 +98,32 @@
       alert(`${group.toUpperCase()}グループの予想受付を開始しました。`);
     }
 
+    // 勝者保存
+    function saveWinners() {
+      const winnerA1 = document.getElementById("winnerA1").value;
+      const winnerA2 = document.getElementById("winnerA2").value;
+      const winnerA3 = document.getElementById("winnerA3").value;
+      const winnerA4 = document.getElementById("winnerA4").value;
+
+      const winnerB1 = document.getElementById("winnerB1").value;
+      const winnerB2 = document.getElementById("winnerB2").value;
+      const winnerB3 = document.getElementById("winnerB3").value;
+      const winnerB4 = document.getElementById("winnerB4").value;
+
+      const winnerC1 = document.getElementById("winnerC1").value;
+      const winnerC2 = document.getElementById("winnerC2").value;
+      const winnerC3 = document.getElementById("winnerC3").value;
+      const winnerC4 = document.getElementById("winnerC4").value;
+
+      // 入力チェック
+      if (winnerA1 && winnerA2 && winnerA3 && winnerA4 && winnerB1 && winnerB2 && winnerB3 && winnerB4 && winnerC1 && winnerC2 && winnerC3 && winnerC4) {
+        alert(`Aグループ: ${winnerA1}, ${winnerA2}, ${winnerA3}, ${winnerA4}\nBグループ: ${winnerB1}, ${winnerB2}, ${winnerB3}, ${winnerB4}\nCグループ: ${winnerC1}, ${winnerC2}, ${winnerC3}, ${winnerC4} の勝者を保存しました。`);
+        // ここでGoogleスプレッドシートなどに保存する処理を追加
+      } else {
+        alert("すべての順位に選手名を入力してください！");
+      }
+    }
+
     // イベントリスナー（終了ボタン）
     document.getElementById("endGroupA").addEventListener("click", () => endGroup("groupA"));
     document.getElementById("endGroupB").addEventListener("click", () => endGroup("groupB"));
@@ -61,6 +133,9 @@
     document.getElementById("startGroupA").addEventListener("click", () => startGroup("groupA"));
     document.getElementById("startGroupB").addEventListener("click", () => startGroup("groupB"));
     document.getElementById("startGroupC").addEventListener("click", () => startGroup("groupC"));
+
+    // 勝者を保存ボタンのイベントリスナー
+    document.getElementById("saveWinners").addEventListener("click", saveWinners);
   </script>
 
 </body>

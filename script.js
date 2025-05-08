@@ -13,7 +13,7 @@ document.getElementById("predictionForm").addEventListener("submit", function (e
   const groupC = document.querySelector('input[name="groupC"]:checked')?.value || '';
   const nickname = document.getElementById("nickname").value || '名無しのドライバー';
 
-  const result = `🎮 ${nickname} の予想 🎯\n\n🟥 A: ${groupA}\n🟨 B: ${groupB}\n🟩 C: ${groupC}`;
+  const result = `🎮 ${nickname} の予想 🎯\n\n🟥 A: ${groupA}\n🟨 B: ${groupB}\n🟩 C: ${groupC}\n\n🗣️ 理由: ${reason}`;
 
   document.getElementById("resultMessage").innerText = "送信完了！ 予想ありがとう！";
 
@@ -21,3 +21,4 @@ document.getElementById("predictionForm").addEventListener("submit", function (e
   const tweet = encodeURIComponent(result + "\n#マリカ予想大会");
   window.open(`https://twitter.com/intent/tweet?text=${tweet}`, "_blank");
 });
+  const reason = document.getElementById("reason").value || "理由はヒミツ！";

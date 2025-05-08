@@ -126,12 +126,28 @@
       const winnerC3 = document.getElementById("winnerC3").value;
       const winnerC4 = document.getElementById("winnerC4").value;
 
-      // 入力チェック
-      if (winnerA1 && winnerA2 && winnerA3 && winnerA4 && winnerB1 && winnerB2 && winnerB3 && winnerB4 && winnerC1 && winnerC2 && winnerC3 && winnerC4) {
-        alert(`Aグループ: ${winnerA1}, ${winnerA2}, ${winnerA3}, ${winnerA4}\nBグループ: ${winnerB1}, ${winnerB2}, ${winnerB3}, ${winnerB4}\nCグループ: ${winnerC1}, ${winnerC2}, ${winnerC3}, ${winnerC4} の勝者を保存しました。`);
+      // 入力チェック（入力されている順位だけを保存）
+      let winners = [];
+      if (winnerA1) winners.push(`Aグループ 1位: ${winnerA1}`);
+      if (winnerA2) winners.push(`Aグループ 2位: ${winnerA2}`);
+      if (winnerA3) winners.push(`Aグループ 3位: ${winnerA3}`);
+      if (winnerA4) winners.push(`Aグループ 4位: ${winnerA4}`);
+
+      if (winnerB1) winners.push(`Bグループ 1位: ${winnerB1}`);
+      if (winnerB2) winners.push(`Bグループ 2位: ${winnerB2}`);
+      if (winnerB3) winners.push(`Bグループ 3位: ${winnerB3}`);
+      if (winnerB4) winners.push(`Bグループ 4位: ${winnerB4}`);
+
+      if (winnerC1) winners.push(`Cグループ 1位: ${winnerC1}`);
+      if (winnerC2) winners.push(`Cグループ 2位: ${winnerC2}`);
+      if (winnerC3) winners.push(`Cグループ 3位: ${winnerC3}`);
+      if (winnerC4) winners.push(`Cグループ 4位: ${winnerC4}`);
+
+      if (winners.length > 0) {
+        alert("保存された勝者:\n" + winners.join("\n"));
         // ここでGoogleスプレッドシートなどに保存する処理を追加
       } else {
-        alert("すべての順位に選手名を入力してください！");
+        alert("少なくとも1つの順位を入力してください！");
       }
     }
 

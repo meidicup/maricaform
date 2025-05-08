@@ -2,11 +2,12 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>マリカ 開発者用ページ</title>
+  <title>マリオカート 開発者用ページ</title>
   <style>
     body { font-family: sans-serif; padding: 20px; }
     button { margin-right: 10px; }
     #groupStatus { margin-top: 20px; }
+    .groupInput { display: none; } /* 初期状態では入力欄を隠す */
   </style>
 </head>
 <body>
@@ -32,47 +33,56 @@
 
   <h3>勝者を入力（1位～4位）</h3>
 
-  <h4>Aグループ</h4>
-  <label for="winnerA1">1位:</label>
-  <input type="text" id="winnerA1" placeholder="Aグループ 1位">
-  <br><br>
-  <label for="winnerA2">2位:</label>
-  <input type="text" id="winnerA2" placeholder="Aグループ 2位">
-  <br><br>
-  <label for="winnerA3">3位:</label>
-  <input type="text" id="winnerA3" placeholder="Aグループ 3位">
-  <br><br>
-  <label for="winnerA4">4位:</label>
-  <input type="text" id="winnerA4" placeholder="Aグループ 4位">
-  <br><br>
+  <!-- Aグループ入力フォーム -->
+  <div class="groupInput" id="groupAInput">
+    <h4>Aグループ</h4>
+    <label for="winnerA1">1位:</label>
+    <input type="text" id="winnerA1" placeholder="Aグループ 1位">
+    <br><br>
+    <label for="winnerA2">2位:</label>
+    <input type="text" id="winnerA2" placeholder="Aグループ 2位">
+    <br><br>
+    <label for="winnerA3">3位:</label>
+    <input type="text" id="winnerA3" placeholder="Aグループ 3位">
+    <br><br>
+    <label for="winnerA4">4位:</label>
+    <input type="text" id="winnerA4" placeholder="Aグループ 4位">
+    <br><br>
+  </div>
 
-  <h4>Bグループ</h4>
-  <label for="winnerB1">1位:</label>
-  <input type="text" id="winnerB1" placeholder="Bグループ 1位">
-  <br><br>
-  <label for="winnerB2">2位:</label>
-  <input type="text" id="winnerB2" placeholder="Bグループ 2位">
-  <br><br>
-  <label for="winnerB3">3位:</label>
-  <input type="text" id="winnerB3" placeholder="Bグループ 3位">
-  <br><br>
-  <label for="winnerB4">4位:</label>
-  <input type="text" id="winnerB4" placeholder="Bグループ 4位">
-  <br><br>
+  <!-- Bグループ入力フォーム -->
+  <div class="groupInput" id="groupBInput">
+    <h4>Bグループ</h4>
+    <label for="winnerB1">1位:</label>
+    <input type="text" id="winnerB1" placeholder="Bグループ 1位">
+    <br><br>
+    <label for="winnerB2">2位:</label>
+    <input type="text" id="winnerB2" placeholder="Bグループ 2位">
+    <br><br>
+    <label for="winnerB3">3位:</label>
+    <input type="text" id="winnerB3" placeholder="Bグループ 3位">
+    <br><br>
+    <label for="winnerB4">4位:</label>
+    <input type="text" id="winnerB4" placeholder="Bグループ 4位">
+    <br><br>
+  </div>
 
-  <h4>Cグループ</h4>
-  <label for="winnerC1">1位:</label>
-  <input type="text" id="winnerC1" placeholder="Cグループ 1位">
-  <br><br>
-  <label for="winnerC2">2位:</label>
-  <input type="text" id="winnerC2" placeholder="Cグループ 2位">
-  <br><br>
-  <label for="winnerC3">3位:</label>
-  <input type="text" id="winnerC3" placeholder="Cグループ 3位">
-  <br><br>
-  <label for="winnerC4">4位:</label>
-  <input type="text" id="winnerC4" placeholder="Cグループ 4位">
-  <br><br>
+  <!-- Cグループ入力フォーム -->
+  <div class="groupInput" id="groupCInput">
+    <h4>Cグループ</h4>
+    <label for="winnerC1">1位:</label>
+    <input type="text" id="winnerC1" placeholder="Cグループ 1位">
+    <br><br>
+    <label for="winnerC2">2位:</label>
+    <input type="text" id="winnerC2" placeholder="Cグループ 2位">
+    <br><br>
+    <label for="winnerC3">3位:</label>
+    <input type="text" id="winnerC3" placeholder="Cグループ 3位">
+    <br><br>
+    <label for="winnerC4">4位:</label>
+    <input type="text" id="winnerC4" placeholder="Cグループ 4位">
+    <br><br>
+  </div>
 
   <button id="saveWinners">勝者を保存</button>
 
@@ -88,6 +98,7 @@
     function endGroup(group) {
       groupStatus[group] = "終了";
       document.getElementById(`${group}Status`).innerHTML = `${group.toUpperCase()}グループ: <strong>予想終了</strong>`;
+      document.getElementById(`${group}Input`).style.display = "block"; // 終了したグループの入力フォームを表示
       alert(`${group.toUpperCase()}グループの予想受付を終了しました。`);
     }
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>マリオカート予想大会</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏁 マリオカート予想大会 🏁</h1>
+    <p>あなたの予想を信号カラーの3グループから選んでください！</p>
+  </header>
+
+  <nav>
+    <button onclick="showGroup('A')">🟥 Aグループ</button>
+    <button onclick="showGroup('B')">🟨 Bグループ</button>
+    <button onclick="showGroup('C')">🟩 Cグループ</button>
+  </nav>
+
+  <main>
+    <form id="predictionForm">
+      <section id="groupA" class="group-section">
+        <h2>Aグループ（🟥）</h2>
+        <label><input type="radio" name="groupA" value="1"> 1番</label>
+        <label><input type="radio" name="groupA" value="2"> 2番</label>
+        <!-- 以下省略: 3〜12まで -->
+        <label><input type="radio" name="groupA" value="12"> 12番</label>
+      </section>
+
+      <section id="groupB" class="group-section hidden">
+        <h2>Bグループ（🟨）</h2>
+        <label><input type="radio" name="groupB" value="①"> ①番</label>
+        <!-- 以下省略 -->
+        <label><input type="radio" name="groupB" value="⑫"> ⑫番</label>
+      </section>
+
+      <section id="groupC" class="group-section hidden">
+        <h2>Cグループ（🟩）</h2>
+        <label><input type="radio" name="groupC" value="一"> 一番</label>
+        <!-- 以下省略 -->
+        <label><input type="radio" name="groupC" value="十二"> 十二番</label>
+      </section>
+
+      <div>
+        <label for="nickname">ラジオネーム：</label>
+        <input type="text" id="nickname" name="nickname" placeholder="例：ドリフト番長" />
+      </div>
+
+      <button type="submit">予想を投稿！</button>
+    </form>
+    <p id="resultMessage"></p>
+  </main>
+
+  <footer>
+    <p>© 2025 マリオカート予想大会製作委員会</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

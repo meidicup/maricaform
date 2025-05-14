@@ -5,10 +5,9 @@
       font-family: sans-serif;
       padding: 20px;
     }
-    .footer{
-            
-            text-align:center,
-        }
+    footer{
+        text-align:center;
+    }
     h2 {
       text-align: center;
     }

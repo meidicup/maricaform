@@ -20,6 +20,10 @@
           const name = document.createElement('div');
           name.className = 'name';
           name.textContent = candidate.name;
+          
+          const bio = document.createElement('div');
+          bio.className = 'bio';
+          bio.textContent = candidate.bio;
 
           div.appendChild(img);
           div.appendChild(name);

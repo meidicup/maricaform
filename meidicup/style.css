@@ -9,8 +9,11 @@
       text-align: center;
       padding: 20px;
     }
+    
     .footer a {
-      margin: 0 10px;
+      display: inline-block;
+      margin: 0 15px; /* 左右に15pxの間隔 */
+      text-decoration: none;
     }
 
     h2 {

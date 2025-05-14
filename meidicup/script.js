@@ -14,16 +14,12 @@
           div.dataset.id = candidate.id;
 
           const img = document.createElement('img');
-          img.src = `img/thumb/${group}/${candidate.id}.png`; // サムネイル画像
+          img.src = `img/thumb/${group}/${candidate.id}.jpg`; // サムネイル画像
           img.alt = candidate.name;
 
           const name = document.createElement('div');
           name.className = 'name';
           name.textContent = candidate.name;
-
-          const bio = document.createElement('div');
-          bio.className = 'bio';
-          bio.textContent = candidate.bio;
 
           div.appendChild(img);
           div.appendChild(name);
@@ -32,7 +28,7 @@
           // 画像クリックでモーダル表示
           div.addEventListener('click', () => {
             // モーダルにデータ挿入
-            document.getElementById('modalImg').src = `img/mainvisual/${group}/${candidate.id}.png`; // 拡大画像
+            document.getElementById('modalImg').src = `img/mainvisual/${group}/${candidate.id}.jpg`; // 拡大画像
             document.getElementById('modalName').textContent = candidate.name;
             document.getElementById('modalBio').textContent = candidate.bio;
             selectedCandidateInput.value = candidate.id;

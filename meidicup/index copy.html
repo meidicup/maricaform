@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>投票ページ</title>
+  <link rel="stylesheet" href="style copy.css">
+</head>
+<body>
+
+<h2>投票ページ</h2>
+
+<!-- グループ選択 -->
+<div class="group-select">
+  <button onclick="loadCandidates('A')">グループA</button>
+  <button onclick="loadCandidates('B')">グループB</button>
+  <button onclick="loadCandidates('C')">グループC</button>
+</div>
+
+<!-- 候補者一覧 -->
+<div class="candidate-grid" id="candidateGrid"></div>
+
+<!-- モーダルウィンドウ -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="modalClose" class="modal-close">&times;</span>
+    <img id="modalImg" src="" alt="" class="modal-img">
+    <h3 id="modalName"></h3>
+    <p id="modalBio"></p>
+    <form action="/submit" method="POST">
+      <input type="hidden" name="selectedGroup" id="selectedGroup">
+      <input type="hidden" name="selectedCandidate" id="modalSelectedCandidate">
+      <button type="submit">この人に投票する</button>
+    </form>
+  </div>
+</div>
+
+<!-- スクリプト：候補者データ読み込み＆描画 -->
+<script src="script copy.js" defer></script>
+
+</body>
+</html>

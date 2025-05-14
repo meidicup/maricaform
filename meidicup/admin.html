@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理者ページ - 決勝進出者更新</title>
+  <link rel="stylesheet" href="style copy.css">
+</head>
+<body>
+
+  <h1>決勝進出者の選択（各グループから4人選んでください）</h1>
+
+  <form id="updateForm">
+    <div id="groupA">
+      <h2>Aグループ</h2>
+      <!-- Aグループの候補者チェックボックスはここに動的に表示されます -->
+    </div>
+
+    <div id="groupB">
+      <h2>Bグループ</h2>
+      <!-- Bグループの候補者チェックボックスはここに動的に表示されます -->
+    </div>
+
+    <div id="groupC">
+      <h2>Cグループ</h2>
+      <!-- Cグループの候補者チェックボックスはここに動的に表示されます -->
+    </div>
+
+    <button type="submit">更新</button>
+  </form>
+
+  <script>
+  async function loadCandidates(group) {
+  const response = await fetch(`/data/candidates${group}.json`);
+  if (!response.ok) {
+    alert('候補者データの読み込みに失敗しました');
+    return [];
+    }
+    return await response.json();
+    }
+
+    async function populateGroup(group) {
+    const candidates = await loadCandidates(group);
+    const groupContainer = document.getElementById(`group${group}`);
+    
+    if (candidates && candidates.length > 0) {
+        candidates.forEach(candidate => {
+        const label = document.createElement('label');
+        label.innerHTML = `
+            <input type="checkbox" name="group${group}" value="${candidate.id}"> 
+            ${candidate.name}<br>
+        `;
+        groupContainer.appendChild(label);
+        });
+    }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    populateGroup('A');
+    populateGroup('B');
+    populateGroup('C');
+    });
+
+  </script>
+
+</body>
+</html>

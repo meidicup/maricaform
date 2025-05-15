@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+#userName {
+  width: 150px; /* 幅を小さめに */
+  height: 30px; /* 高さを調整 */
+  font-size: 14px; /* 文字の大きさも少し小さめに */
+  padding: 4px 8px; /* 内側の余白 */
+}
 
 html {
   background-color: #E839929;

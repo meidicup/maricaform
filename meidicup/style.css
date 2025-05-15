@@ -111,10 +111,11 @@ h2 {
     padding: 1em;
     box-sizing: border-box;
     position: relative;
+    margin: 5vh auto;
   }
 
   .modal-img {
-    width: 100%;
+    width: 60%;
     height: 60%;
     object-fit: cover;
     object-position: top;

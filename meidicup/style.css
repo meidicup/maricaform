@@ -87,14 +87,15 @@
     }
 
     .modal-img {
-      width: 80%;
+      max-height: 80vh;
+      width: auto;
       height: auto;
-      max-height: 30vh; /* 必要に応じて調整 */
-      object-fit: contain;
+      max-width: 100%;
+      object-fit: cover;       /* はみ出した分をトリミング */
+      object-position: top;    /* 上（顔）を優先的に表示 */
       display: block;
       margin: 0 auto;
     }
-
 
     .modal-close {
       position: absolute;

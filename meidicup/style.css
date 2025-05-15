@@ -1,136 +1,117 @@
-    html{
-        background-color: #E839929;
-    }
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-    .footer {
-      text-align: center;
-      padding: 20px;
-    }
-    
-    .footer a {
-      display: inline-block;
-      margin: 0 15px; /* 左右に15pxの間隔 */
-      text-decoration: none;
-    }
+html {
+  background-color: #E839929;
+}
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+}
+.footer a {
+  display: inline-block;
+  margin: 0 15px;
+  text-decoration: none;
+}
+h2 {
+  text-align: center;
+}
+.group-select {
+  text-align: center;
+  margin: 20px;
+}
+.candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.candidate {
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 10px;
+  transition: 0.2s;
+}
+.candidate:hover {
+  background-color: #f5f5f5;
+}
+.candidate.selected {
+  border-color: #007bff;
+  background-color: #e6f0ff;
+}
+.candidate img {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+}
+.candidate .name {
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+.candidate .bio {
+  font-size: 12px;
+  color: #555;
+}
 
-    h2 {
-      text-align: center;
-    }
+/* モーダルスタイル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: 5vh auto;
+  overflow: auto;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+.modal-img {
+  width: 80%;
+  max-height: 60vh;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  margin: 0 auto 1em;
+  border-radius: 8px;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-    .group-select {
-      text-align: center;
-      margin: 20px;
-    }
-
-    .candidate-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .candidate {
-      text-align: center;
-      cursor: pointer;
-      border: 2px solid transparent;
-      border-radius: 6px;
-      padding: 10px;
-      transition: 0.2s;
-    }
-
-    .candidate:hover {
-      background-color: #f5f5f5;
-    }
-
-    .candidate.selected {
-      border-color: #007bff;
-      background-color: #e6f0ff;
-    }
-
-    .candidate img {
-      width: 100px;
-      height: 100px;
-      border-radius: 4px;
-    }
-
-    .candidate .name {
-      font-weight: bold;
-      margin: 8px 0 4px;
-    }
-
-    .candidate .bio {
-      font-size: 12px;
-      color: #555;
-    }
-
-    /* モーダルスタイル */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    .modal-content {
-        max-width: 90vw;
-        max-height: 90vh;
-        overflow: auto;
-        background-color: #fff;
-        padding: 1em;
-        border-radius: 8px;
-        text-align: center;
-    }
-
-    .modal-img {
-      width: 80%;
-      max-height: 60vh;
-      object-fit: cover;
-      object-position: top;
-      margin: 0 auto;
-      border-radius: 8px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 10px; right: 15px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    @media screen and (max-width: 600px) {
-      .candidate-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2列に */
-      }
-
-      .candidate img {
-        width: 80px;
-        height: 80px;
-      }
-
-      .modal-content {
-        width: 90%;
-        margin: 30% auto;
-      }
-
-    @media screen and (max-width: 600px) {
-      /* ... 他のスタイル ... */
-    
-      .modal-img {
-        width: 100%;
-        height: auto;
-        max-height: 60vh;
-        object-fit: cover;
-        object-position: top;
-      }
-    }
-
-      button {
-        width: 100%;
-        font-size: 16px;
-      }
-        
-    }
+/* モバイル対応 */
+@media screen and (max-width: 600px) {
+  .candidate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .candidate img {
+    width: 80px;
+    height: 80px;
+  }
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+  .modal-img {
+    width: 90%;
+    max-height: 50vh;
+  }
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+}

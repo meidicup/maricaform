@@ -5,6 +5,38 @@ body {
   font-family: sans-serif;
   padding: 20px;
 }
+/* Google Fontsから明朝体をインポート */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+
+body {
+  font-family: 'Noto Serif JP', serif; /* 明朝体を指定 */
+  margin: 0;
+  padding: 0;
+  background-color: #E839929;
+}
+
+.hero-text {
+  text-align: center;
+  font-size: 2rem; /* テキストサイズ */
+  line-height: 1.5; /* 行間 */
+  margin-top: 50px; /* グループ選択の上に間隔を開ける */
+  color: #fff; /* 白色 */
+  padding: 20px;
+  font-weight: bold;
+  letter-spacing: 2px; /* 文字間隔 */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景色 */
+  border-radius: 10px; /* 角を丸める */
+  width: 80%; /* 幅を80%に */
+  margin-left: auto;
+  margin-right: auto; /* 横中央に配置 */
+}
+
+/* グループ選択部分と被らないように位置調整 */
+.group-select {
+  margin-top: 40px;
+  text-align: center;
+}
+
 .footer {
   text-align: center;
   padding: 20px;

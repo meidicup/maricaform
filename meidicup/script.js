@@ -27,7 +27,6 @@
 
           div.appendChild(img);
           div.appendChild(name);
-          div.appendChild(bio);
 
           // 画像クリックでモーダル表示
           div.addEventListener('click', () => {

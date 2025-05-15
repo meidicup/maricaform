@@ -103,14 +103,14 @@ h2 {
     width: 80px;
     height: 80px;
   }
+
   .modal-content {
     width: 90vw;
-    height: 90vw; /* 正方形に近づける */
-    max-height: none;
-    overflow-y: auto;
-    margin: 5vh auto;
+    aspect-ratio: 1 / 1;  /* ← これで正方形にする */
+    overflow: hidden;
     padding: 1em;
     box-sizing: border-box;
+    position: relative;
   }
 
   .modal-img {
@@ -119,11 +119,14 @@ h2 {
     object-fit: cover;
     object-position: top;
     border-radius: 6px;
-    margin-bottom: 0.5em;
   }
 
   form {
-    font-size: 14px;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    font-size: 12px;
   }
 
   button {

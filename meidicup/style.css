@@ -7,7 +7,60 @@ body {
   font-family: sans-serif;
   padding: 20px;
 }
+  .vote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
+  .input-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start; /* 上揃え */
+  }
+
+  .input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  button {
+    align-self: flex-end;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
 .hero-text {
   font-family: 'Noto Serif JP', serif; /* 明朝体を指定 */
   text-align: center;

@@ -8,14 +8,8 @@ body {
   padding: 20px;
 }
 
-body {
-  font-family: 'Noto Serif JP', serif; /* 明朝体を指定 */
-  margin: 0;
-  padding: 0;
-  background-color: #E839929;
-}
-
 .hero-text {
+  font-family: 'Noto Serif JP', serif; /* 明朝体を指定 */
   text-align: center;
   font-size: 2rem; /* テキストサイズ */
   line-height: 1.5; /* 行間 */

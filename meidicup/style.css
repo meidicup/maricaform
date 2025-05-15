@@ -224,11 +224,10 @@ h2 {
   }
 
   form {
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
-    right: 1em;
+    position: static;
+    margin-top: 1em;
     font-size: 12px;
+    width: 100%;
   }
 
   button {

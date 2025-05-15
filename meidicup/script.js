@@ -60,6 +60,49 @@
       document.getElementById('modal').style.display = 'none';
     }
   });
+  document.getElementById('voteForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    const data = {
+      group: document.getElementById('selectedGroup').value,
+      candidate: document.getElementById('modalSelectedCandidate').value,
+      name: document.getElementById('userName').value,
+      reason: document.getElementById('reason').value
+    };
+  
+    fetch("【ここにあなたのGoogle Apps ScriptのURL】", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.text())
+    .then(response => {
+    if (confirm("投票が成功しました！結果を共有しましょうか？")) {
+      // YES のとき → X の投稿画面に遷移
+      const name = document.getElementById('modalName').textContent;
+      const user = document.getElementById('userName').value;
+      const reason = document.getElementById('reason').value;
+      const hashtag = "めいぢカップ";
+  
+      const tweetText = encodeURIComponent(
+        `『${name}』に投票しました！\n#${hashtag}`
+      );
+  
+      const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+      window.open(tweetUrl, '_blank');
+    }
+  
+    document.getElementById('voteForm').reset();
+    document.getElementById('modal').style.display = 'none';
+  })
+      .catch(err => {
+      alert("送信に失敗しました。もう一度お試しください。");
+      console.error(err);
+    });
+  });
+
 
   // 最初にグループAを読み込む
   //loadCandidates('A');

@@ -88,11 +88,14 @@
     }
 
     .modal-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 6px;
-      object-fit: cover;
+      max-width: 90vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
+
 
     .modal-close {
       position: absolute;

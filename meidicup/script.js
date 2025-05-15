@@ -65,7 +65,7 @@
   
     const data = {
       group: document.getElementById('selectedGroup').value,
-      candidate: document.getElementById('modalSelectedCandidate').value,
+      candidateName: document.getElementById('modalName').textContent,
       name: document.getElementById('userName').value,
       reason: document.getElementById('reason').value
     };

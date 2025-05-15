@@ -118,10 +118,17 @@
         margin: 30% auto;
       }
 
+    @media screen and (max-width: 600px) {
+      /* ... 他のスタイル ... */
+    
       .modal-img {
-        width: 150px;
-        height: 150px;
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+        object-fit: cover;
+        object-position: top;
       }
+    }
 
       button {
         width: 100%;

@@ -32,9 +32,11 @@
     <img id="modalImg" src="" alt="" class="modal-img">
     <h3 id="modalName"></h3>
     <p id="modalBio"></p>
-    <form action="/submit" method="POST">
+    <form id="voteForm" action="/submit" method="POST">
       <input type="hidden" name="selectedGroup" id="selectedGroup">
       <input type="hidden" name="selectedCandidate" id="modalSelectedCandidate">
+      <input type="text" name="userName" id="userName" placeholder="あなたの名前（任意）">
+      <textarea name="reason" id="reason" placeholder="この人を選んだ理由（任意）"></textarea>
       <button type="submit">この人に投票する</button>
     </form>
   </div>

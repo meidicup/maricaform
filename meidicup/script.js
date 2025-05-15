@@ -31,7 +31,7 @@
           // 画像クリックでモーダル表示
           div.addEventListener('click', () => {
             // モーダルにデータ挿入
-            document.getElementById('modalImg').src = `img/mainvisual/${group}/${candidate.id}.jpg`; // 拡大画像
+            document.getElementById('modalImg').src = `img/mainvisual/${group}/${candidate.id}.png`; // 拡大画像
             document.getElementById('modalName').textContent = candidate.name;
             document.getElementById('modalBio').textContent = candidate.bio;
             selectedCandidateInput.value = candidate.id;

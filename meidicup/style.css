@@ -89,7 +89,7 @@
     .modal-img {
       width: 80%;
       height: auto;
-      max-height: 60vh; /* 必要に応じて調整 */
+      max-height: 30vh; /* 必要に応じて調整 */
       object-fit: contain;
       display: block;
       margin: 0 auto;

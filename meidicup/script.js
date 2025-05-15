@@ -70,7 +70,7 @@
       reason: document.getElementById('reason').value
     };
   
-    fetch("https://script.google.com/macros/s/AKfycbwz6VlRr-xDp3Zuzp1dPa3tmomgU6iW2moOensLoSUvJaKLh4_MbwIazrhqUWWSido/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxjum_rK9yhP50ULHkmn_5GhHW_E5VjvDOMSQnc60dmkzoGX-qjeP29TxagX9ESGmq8/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

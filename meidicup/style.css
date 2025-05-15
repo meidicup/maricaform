@@ -105,18 +105,17 @@ h2 {
   }
 
   .modal-content {
-    width: 90vw;
+    width: 85vw;
+    max-height: 75vw;
     aspect-ratio: 1 / 1;  /* ← これで正方形にする */
-    overflow: hidden;
+    overflow-y: auto;
     padding: 1em;
-    box-sizing: border-box;
-    position: relative;
-    margin: 5vh auto;
+    margin: 10vh auto;
+    border-radius: 10px;
   }
 
   .modal-img {
-    width: 60%;
-    height: 60%;
+    height: 50%;
     object-fit: cover;
     object-position: top;
     border-radius: 6px;

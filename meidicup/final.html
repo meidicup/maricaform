@@ -1,1 +1,98 @@
 
+<script>
+  // グローバルに定義
+  window.submitted = false;
+</script>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>めいぢカップ順位予想</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏁 めいぢカップ予想 🏁</h1>
+    <p>あなたの予想は？</p>
+  </header>
+
+  <nav>
+    <button onclick="showGroup('A')">🟥 Aグループ</button>
+    <button onclick="showGroup('B')">🟨 Bグループ</button>
+    <button onclick="showGroup('C')">🟩 Cグループ</button>
+  </nav>
+
+  <main>
+    <form id="predictionForm">
+      <section id="groupA" class="group-section">
+        <h2>Aグループ（🟥）</h2>
+        <label><input type="radio" name="groupA" value="1"> 1番</label><br>
+        <label><input type="radio" name="groupA" value="2"> 2番</label><br>
+        <label><input type="radio" name="groupA" value="3"> 3番</label><br>
+        <label><input type="radio" name="groupA" value="4"> 4番</label><br>
+        <label><input type="radio" name="groupA" value="5"> 5番</label><br>
+        <label><input type="radio" name="groupA" value="6"> 6番</label><br>
+        <label><input type="radio" name="groupA" value="7"> 7番</label><br>
+        <label><input type="radio" name="groupA" value="8"> 8番</label><br>
+        <label><input type="radio" name="groupA" value="9"> 9番</label><br>
+        <label><input type="radio" name="groupA" value="10"> 10番</label><br>
+        <label><input type="radio" name="groupA" value="11"> 11番</label><br>
+        <label><input type="radio" name="groupA" value="12"> 12番</label><br>
+      </section>
+
+      <section id="groupB" class="group-section hidden">
+        <h2>Bグループ（🟨）</h2>
+        <label><input type="radio" name="groupB" value="1"> ①番</label><br>
+        <label><input type="radio" name="groupB" value="2"> ②番</label><br>
+        <label><input type="radio" name="groupB" value="3"> ③番</label><br>
+        <label><input type="radio" name="groupB" value="4"> ④番</label><br>
+        <label><input type="radio" name="groupB" value="5"> ⑤番</label><br>
+        <label><input type="radio" name="groupB" value="6"> ⑥番</label><br>
+        <label><input type="radio" name="groupB" value="7"> ⑦番</label><br>
+        <label><input type="radio" name="groupB" value="8"> ⑧番</label><br>
+        <label><input type="radio" name="groupB" value="9"> ⑨番</label><br>
+        <label><input type="radio" name="groupB" value="10"> ⑩番</label><br>
+        <label><input type="radio" name="groupB" value="11"> ⑪番</label><br>
+        <label><input type="radio" name="groupB" value="12"> ⑫番</label><br>
+      </section>
+
+      <section id="groupC" class="group-section hidden">
+        <h2>Cグループ（🟩）</h2>
+        <label><input type="radio" name="groupC" value="1"> 一番</label><br>
+        <label><input type="radio" name="groupC" value="2"> 二番</label><br>
+        <label><input type="radio" name="groupC" value="3"> 三番</label><br>
+        <label><input type="radio" name="groupC" value="4"> 四番</label><br>
+        <label><input type="radio" name="groupC" value="5"> 五番</label><br>
+        <label><input type="radio" name="groupC" value="6"> 六番</label><br>
+        <label><input type="radio" name="groupC" value="7"> 七番</label><br>
+        <label><input type="radio" name="groupC" value="8"> 八番</label>Mbr>
+        <label><input type="radio" name="groupC" value="9"> 九番</label><br>
+        <label><input type="radio" name="groupC" value="10"> 十番</label><br>
+        <label><input type="radio" name="groupC" value="11"> 十一番</label><br>
+        <label><input type="radio" name="groupC" value="12"> 十二番</label><br>
+      </section>
+
+      <div>
+        <label for="nickname">HN(省略可)：</label>
+        <input type="text" id="nickname" name="nickname" placeholder="例：ドリフト番長" />
+      </div>
+
+      <div>
+        <label for="reason">予想の理由：</label><br />
+        <textarea id="reason" name="reason" rows="4" placeholder="例：ドリフトの音が違う気がする！とか..."></textarea>
+      </div>
+
+      <button type="submit">予想を投稿！</button>
+    </form>
+    <p id="resultMessage"></p>
+  </main>
+
+  <footer>
+    <p>© 2025 めいぢカップ</p>
+  </footer>
+
+  <script src="finalScript.js"></script>
+</body>
+</html>

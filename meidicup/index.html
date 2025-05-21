@@ -32,22 +32,21 @@
     <img id="modalImg" src="" alt="" class="modal-img">
     <h3 id="modalName"></h3>
     <p id="modalBio"></p>
-    <form id="voteForm" class="vote-form">
-      <input type="hidden" id="modalSelectedCandidate" name="candidateId">
-      <input type="hidden" id="selectedGroup" name="group">
-
-      <div class="input-row">
-        <div class="input-group">
-          <label for="userName">名前(任意)</label>
-          <input type="text" id="userName" name="userName" placeholder="あなたのお名前">
-        </div>
-        <div class="input-group">
-          <label for="reason">投票理由(任意)</label>
-          <textarea id="reason" name="reason"></textarea>
-        </div>
-      </div>
-      <button type="submit">この人に投票する</button>
+    <form id="voteForm" action="https://docs.google.com/forms/d/e/1FAIpQLScKdUC4M_8UpbjRMkt24b7dILdweOZ7r1ShGUUKWSELBq8gJQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      <input type="hidden" name="entry.1111111111" id="entryGroup"> <!-- グループ -->
+      <input type="hidden" name="entry.2222222222" id="entryCandidate"> <!-- 候補者 -->
+      <label>
+        お名前（任意）：
+        <input type="text" name="entry.3333333333" id="entryUserName">
+      </label>
+      <label>
+        応援コメント：
+        <textarea name="entry.4444444444" id="entryReason"></textarea>
+      </label>
+      <button type="submit">投票する</button>
     </form>
+    
+    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('投票が完了しました！');"></iframe>
   </div>
 </div>
 <footer class="footer">

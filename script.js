@@ -22,3 +22,16 @@ document.getElementById("predictionForm").addEventListener("submit", function (e
   window.open(`https://twitter.com/intent/tweet?text=${tweet}`, "_blank");
 });
   const reason = document.getElementById("reason").value || "理由はヒミツ！";
+div.addEventListener('click', () => {
+  // モーダルにデータ挿入
+  document.getElementById('modalImg').src = `img/mainvisual/${group}/${candidate.id}.png`;
+  document.getElementById('modalName').textContent = candidate.name;
+  document.getElementById('modalBio').textContent = candidate.bio;
+
+  // Googleフォーム用hidden inputに値をセット
+  document.getElementById('entryGroup').value = group;
+  document.getElementById('entryCandidate').value = candidate.name;
+
+  // モーダル表示
+  document.getElementById('modal').style.display = 'block';
+});

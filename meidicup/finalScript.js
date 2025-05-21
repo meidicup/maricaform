@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'B10', name: 'ぐるめしゃんぷう', group: 'B', bio: 'Bグループ二位通過' },
     { id: 'B9', name: 'おたけ', group: 'B', bio: 'Bグループ三位通過' },
     { id: 'B12', name: 'ルントウ', group: 'B', bio: 'Bグループ四位通過' },
-    { id: 'C1', name: 'するめ', group: 'C', bio: 'Cグループ一位通過' },
-    { id: 'C2', name: 'Canule', group: 'C', bio: 'Cグループ二位通過' },
-    { id: 'C3', name: 'ながせ', group: 'C', bio: 'Cグループ三位通過' },
-    { id: 'C4', name: 'たなかたろう', group: 'C', bio: 'Cグループ四位通過' },
+    { id: 'C8', name: 'するめ', group: 'C', bio: 'Cグループ一位通過' },
+    { id: 'C10', name: 'Canule', group: 'C', bio: 'Cグループ二位通過' },
+    { id: 'C5', name: 'ながせ', group: 'C', bio: 'Cグループ三位通過' },
+    { id: 'C9', name: 'たなかたろう', group: 'C', bio: 'Cグループ四位通過' },
   ];
 
   finalists.forEach(candidate => {

@@ -1,71 +1,61 @@
-const candidateGrid = document.getElementById('candidateGrid');
+document.addEventListener('DOMContentLoaded', () => {
+  const candidateGrid = document.getElementById('candidateGrid');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
+  const modalName = document.getElementById('modalName');
+  const modalBio = document.getElementById('modalBio');
+  const groupInput = document.getElementById('entryGroup');
+  const candidateInput = document.getElementById('entryCandidate');
 
-// 最初にグループAを読み込む（初期表示が必要な場合はコメントを外す）
-// loadCandidates('A');
+  // モーダル閉じる処理
+  document.getElementById('modalClose').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
 
-// グループごとに候補者データを読み込み
-function loadCandidates(group) {
-  candidateGrid.innerHTML = ''; // 候補者リストをクリア
-  fetch(`data/candidates${group}.json`)  // グループごとのデータファイルを読み込む
-    .then(res => res.json())
-    .then(candidates => {
-      candidates.forEach(candidate => {
-        const div = document.createElement('div');
-        div.className = 'candidate';
-        div.dataset.id = candidate.id;
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 
-        const img = document.createElement('img');
-        img.src = `img/thumb/${group}/${candidate.id}.jpg`; // サムネイル画像
-        img.alt = candidate.name;
+  window.loadCandidates = function (group) {
+    candidateGrid.innerHTML = '';
 
-        const name = document.createElement('div');
-        name.className = 'name';
-        name.textContent = candidate.name;
-        
-        const bio = document.createElement('div');
-        bio.className = 'bio';
-        bio.textContent = candidate.bio;
+    fetch(`data/candidates${group}.json`)
+      .then(res => res.json())
+      .then(candidates => {
+        candidates.forEach(candidate => {
+          const div = document.createElement('div');
+          div.className = 'candidate';
+          div.dataset.id = candidate.id;
 
-        div.appendChild(img);
-        div.appendChild(name);
+          const img = document.createElement('img');
+          img.src = `img/thumb/${group}/${candidate.id}.jpg`;
+          img.alt = candidate.name;
 
-        // 画像クリックでモーダル表示
-        div.addEventListener('click', () => {
-          // モーダルにデータ挿入
-          document.getElementById('modalImg').src = `img/mainvisual/${group}/${candidate.id}.png`; // 拡大画像
-          document.getElementById('modalName').textContent = candidate.name;
-          document.getElementById('modalBio').textContent = candidate.bio;
+          const name = document.createElement('div');
+          name.className = 'name';
+          name.textContent = candidate.name;
 
-          // フォームの hidden input に値を設定
-          const groupInput = document.getElementById('entryGroup');
-          const candidateInput = document.getElementById('entryCandidate');
-          if (groupInput && candidateInput) {
+          div.appendChild(img);
+          div.appendChild(name);
+
+          div.addEventListener('click', () => {
+            modalImg.src = `img/mainvisual/${group}/${candidate.id}.png`;
+            modalName.textContent = candidate.name;
+            modalBio.textContent = candidate.bio;
+
             groupInput.value = group;
             candidateInput.value = candidate.name;
-          } else {
-            console.error('フォームの hidden input が見つかりません。idを確認してください。');
-          }
 
-          // モーダル表示
-          document.getElementById('modal').style.display = 'block';
+            modal.style.display = 'block';
+          });
+
+          candidateGrid.appendChild(div);
         });
-
-        candidateGrid.appendChild(div);
+      })
+      .catch(err => {
+        console.error('候補者データの読み込みに失敗しました:', err);
       });
-    })
-    .catch(err => {
-      console.error('候補者データの読み込みに失敗しました:', err);
-    });
-}
-
-// モーダルを閉じる処理
-document.getElementById('modalClose').addEventListener('click', () => {
-  document.getElementById('modal').style.display = 'none';
-});
-
-// 背景クリックでモーダルを閉じる
-window.addEventListener('click', (e) => {
-  if (e.target.id === 'modal') {
-    document.getElementById('modal').style.display = 'none';
-  }
+  };
 });

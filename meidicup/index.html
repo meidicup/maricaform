@@ -12,7 +12,7 @@
 <h2>めいぢカップ決勝進出者予想</h2>
 
 <div class="hero-text">
-  私たちだって<br> 走りたい。
+  私たちだって<br>走りたい。
 </div>
 
 <!-- グループ選択 -->
@@ -32,9 +32,11 @@
     <img id="modalImg" src="" alt="" class="modal-img">
     <h3 id="modalName"></h3>
     <p id="modalBio"></p>
-    <form id="voteForm" action="https://docs.google.com/forms/d/e/1FAIpQLScKdUC4M_8UpbjRMkt24b7dILdweOZ7r1ShGUUKWSELBq8gJQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-      <input type="hidden" name="entry.2071891521" id="entryGroup"> <!-- グループ -->
-      <input type="hidden" name="entry.1097999112" id="entryCandidate"> <!-- 候補者 -->
+    <form id="voteForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScKdUC4M_8UpbjRMkt24b7dILdweOZ7r1ShGUUKWSELBq8gJQ/formResponse"
+      method="POST" target="hidden_iframe" onsubmit="submitted = true;">
+      <input type="hidden" name="entry.2071891521" id="entryGroup">
+      <input type="hidden" name="entry.1097999112" id="entryCandidate">
       <label>
         お名前（任意）：
         <input type="text" name="entry.219453588" id="entryUserName">
@@ -45,10 +47,10 @@
       </label>
       <button type="submit">投票する</button>
     </form>
-    
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('投票が完了しました！');"></iframe>
   </div>
 </div>
+
 <footer class="footer">
   <h3>©マリオカートめいぢカップ</h3>
   <a href="https://x.com/__me1_2525">めいぢ</a>
@@ -57,5 +59,8 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  let submitted = false;
+</script>
 </body>
 </html>

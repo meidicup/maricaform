@@ -56,8 +56,27 @@
   <a href="https://x.com/Shiden_Raito">紫電 らいと</a>
   <a href="https://x.com/sio_taste">塩</a>
 </footer>
-<!-- スクリプト：候補者データ読み込み＆描画 -->
 <script src="script.js" defer></script>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLScKdUC4M_8UpbjRMkt24b7dILdweOZ7r1ShGUUKWSELBq8gJQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+  <label>グループは？
+    <input type="text" name="entry.1111111111" required>
+  </label><br>
+  <label>候補者は？
+    <input type="text" name="entry.2222222222" required>
+  </label><br>
+  <label>お名前を！（任意）
+    <input type="text" name="entry.3333333333">
+  </label><br>
+  <label>理由を！（任意）
+    <textarea name="entry.4444444444"></textarea>
+  </label><br>
+  <input type="submit" value="送信">
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+  let submitted = false;
+</script>
 
 </body>
 </html>

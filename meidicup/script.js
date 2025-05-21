@@ -1,7 +1,7 @@
   const candidateGrid = document.getElementById('candidateGrid');
   const selectedCandidateInput = document.getElementById('modalSelectedCandidate');
   const selectedGroupInput = document.getElementById('selectedGroup');
-
+  let submitted = false;
   // グループごとに候補者データを読み込み
   function loadCandidates(group) {
     candidateGrid.innerHTML = ''; // 候補者リストをクリア

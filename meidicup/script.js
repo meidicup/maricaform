@@ -59,9 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 });
-
-  function submitted() {
-    // 送信後に何か表示したいならここに処理を書く
-    console.log("フォームが送信されました");
-  }
+function submitted() {
+  // 送信後に何か表示したいならここに処理を書く
+  console.log("フォームが送信されました");
+}
 

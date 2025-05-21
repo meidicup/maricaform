@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modalName.textContent = candidate.name;
       modalBio.textContent = candidate.bio;
 
-      groupInput.value = candidate.group;
+      groupInput.value = "決勝";
       candidateInput.value = candidate.name;
 
       modal.style.display = 'block';

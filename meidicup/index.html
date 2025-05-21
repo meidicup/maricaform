@@ -34,7 +34,7 @@
     <p id="modalBio"></p>
     <form id="voteForm"
       action="https://docs.google.com/forms/d/e/1FAIpQLScKdUC4M_8UpbjRMkt24b7dILdweOZ7r1ShGUUKWSELBq8gJQ/formResponse"
-      method="POST" target="hidden_iframe" onsubmit="submitted = true;">
+      method="POST" target="hidden_iframe" onsubmit="window.submitted = true;">
       <input type="hidden" name="entry.2071891521" id="entryGroup">
       <input type="hidden" name="entry.1097999112" id="entryCandidate">
       <label>
@@ -47,7 +47,7 @@
       </label>
       <button type="submit">投票する</button>
     </form>
-    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('投票が完了しました！');"></iframe>
+    <iframe onload="if(window.submitted){ alert('投票が完了しました！'); window.submitted = false; }"></iframe>
   </div>
 </div>
 
